@@ -11,8 +11,9 @@ class Admin:
                 for line in file:
                     line = line.strip().split(',')
                     if self.name.lower() == line[0].lower() and self.password == line[1]:
-                        return f'{self.name} has logged in'
+                        return True
+                        
             except IndexError:
                 print('Invalid name or password')
                 return 'Invalid name or password'
-        return False
+        return 'Invalid name or password'

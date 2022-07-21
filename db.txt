@@ -1,7 +1,5 @@
-sajan,rai@gmail.com,computer
-sajan rai,rai@gmail.com,computer
-Sajan,@.com,gmail
-Sajan,s@gmail.com,computer
-Sajan,S@gmail.com,sajan
-sajan rai,s@gmail.com,Computer Science 
-Sajan,tv@df.com,Computer
+1,test,tes@gmail.com,tes
+2,Sajan Rai,r@gmail.com,com
+3,Bikram ,b@g.com,com
+4,subham,s@g.com,subham
+7,user,use@g.com,user

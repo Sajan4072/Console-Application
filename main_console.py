@@ -1,7 +1,7 @@
 '''This is tha main landing console  '''
 from register import *
 from login import *
-
+from admin import *
 def main():
     print('\t \t \t \t \t \t\t \t***** Welcome to Insight Workshop Academy *****')
     print('\n ')
@@ -15,11 +15,13 @@ def main():
     if choice == '1':
         register_user()
     elif choice == '2':
-        '''take input from user for name and password'''
-        name = input('Enter your name: ')
-        password = input('Enter your password: ')
+        print('For logging in as an admin, please enter your details')
+        name = input('Enter admin name: ')
+        password = input('Enter admin password: ')
         admin = Admin(name, password)
         print(admin.login())
+        if admin.login() == True:
+            admin_pannel()
     elif choice == '3':
         exit()
     else:
