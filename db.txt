@@ -1,1 +1,6 @@
 sajan,rai@gmail.com,computer
+sajan rai,rai@gmail.com,computer
+Sajan,@.com,gmail
+Sajan,s@gmail.com,computer
+Sajan,S@gmail.com,sajan
+sajan rai,s@gmail.com,Computer Science 

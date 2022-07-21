@@ -1,4 +1,5 @@
 
+import re
 '''class for user registration for particular program'''
 class User:
     def __init__(self, name, email, program):
@@ -21,8 +22,20 @@ def main():
         choice = input('Enter your choice: ')
         if choice == '1':
             name = input('Enter your name: ')
-            email = input('Enter your email: ')
+            while not re.match(r'^[a-zA-Z ]+$', name):
+                print('Name must only contain letters')
+                email = input('Enter your name: ')
+                
+            email = input('Enter your email: ') 
+            while not re.match(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$', email):
+                print('Please enter a valid email')
+                email = input('Enter your email: ')
+
             program= input('Enter your prefered program:')
+            while not re.match(r'^[a-zA-Z ]+$', program):
+                print('Program must only contain letters')
+                program = input('Enter your prefered program:')
+                
             user = User(name, email, program)
             print(user.register())
         elif choice == '2':
