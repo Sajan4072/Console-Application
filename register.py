@@ -1,4 +1,4 @@
-
+'''this handles register function'''
 import re
 '''class for user registration for particular program'''
 class User:
@@ -15,7 +15,7 @@ class User:
 
 
 '''console that displays the menu 1.register for a program 2.exit'''
-def main():
+def register_user():
     while True:
         print('1.Register for a program')
         print('2.Exit')
@@ -24,7 +24,7 @@ def main():
             name = input('Enter your name: ')
             while not re.match(r'^[a-zA-Z ]+$', name):
                 print('Name must only contain letters')
-                email = input('Enter your name: ')
+                name = input('Enter your name: ')
                 
             email = input('Enter your email: ') 
             while not re.match(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$', email):
@@ -35,7 +35,7 @@ def main():
             while not re.match(r'^[a-zA-Z ]+$', program):
                 print('Program must only contain letters')
                 program = input('Enter your prefered program:')
-                
+
             user = User(name, email, program)
             print(user.register())
         elif choice == '2':
@@ -43,5 +43,5 @@ def main():
         else:
             print('Invalid choice')
 
-if __name__=="__main__":
-    main()   
+# if __name__=="__main__":
+#     main()   
