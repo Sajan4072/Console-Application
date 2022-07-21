@@ -1,6 +1,7 @@
 '''this handles register function'''
-from http import server
 import re
+from email.message import EmailMessage
+import ssl
 import smtplib
 from decouple import config
 '''class for user registration for particular program'''
@@ -16,18 +17,23 @@ class User:
         with open('db.txt', 'a') as file:
             file.write(f'{self.number},{self.name},{self.email},{self.program}\n')
         '''send email to user'''
-        # sender_email=config('SENDER_MAIL')
-        # print(sender_email)
-        # receiver_email=self.email
-        # password=config('SENDER_PASSWORD') 
-        # print(password)
-        message=f'Hi {self.name},\n\nThank you for registering for {self.program} program.\n\nRegards,\nInsight Workshop Academy'
-        
-        # server=smtplib.SMTP('smtp.gmail.com',587)
-        # server.starttls()
-        # server.login(sender_email,password)
-        # server.sendmail(sender_email,receiver_email,message)
+        sender_email=config('SENDER_MAIL')       
+        receiver_email=self.email
+        password=config('SENDER_PASSWORD') 
 
+        subject='Welcome to Insight Workshop Academy'
+        body=f'Hi {self.name},\n\nThank you for registering for {self.program} program.\n\nRegards,\nInsight Workshop Academy'
+        
+        em=EmailMessage()
+        em['from']=sender_email
+        em['To']=receiver_email
+        em['Subject']=subject
+        em.set_content(body)
+        context=ssl.create_default_context()
+
+        with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as server:
+            server.login(sender_email, password)
+            server.sendmail(sender_email, receiver_email, em.as_string())
         return f'{self.name} has been registered'
         
 

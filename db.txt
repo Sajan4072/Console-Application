@@ -1,5 +1,2 @@
-1,test,tes@gmail.com,tes
-2,Sajan Rai,r@gmail.com,com
-3,Bikram ,b@g.com,com
-4,subham,s@g.com,subham
-7,user,use@g.com,user
+1,test,tes@gmail.com,Computer
+2,Sajan Rai,rai@gmail.com,Math3,Sujan Rai,deradob960@5k2u.com,Physics
